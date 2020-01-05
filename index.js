@@ -24,6 +24,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
+app.get("/json", (req, res) => {
+  res.json({
+    message: "hey"
+  });
+});
 //Middleware
 app.use(cors()); //CORS policy enabled
 app.use(express.json()); //Parse JSON
